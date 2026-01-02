@@ -1,0 +1,469 @@
+/*acciones*/
+.registro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: 100%;
+}
+.registro .full-width {
+    grid-column: span 2;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+}
+.styled-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+.boton_auto{
+    margin-top: 20px;
+}
+.styled-form label {
+    color: #001f5a; /* Azul oscuro para los labels */
+    width: 100%;
+    font-weight: bold;
+}
+.styled-form input, .styled-form select, .styled-form textarea, .styled-form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.styled-form button {
+    margin-top: 20px;
+    background-color: #053c8f; /* Azul oscuro para el botón */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.styled-form button:hover {
+    background-color: #112872; /* Azul más oscuro al pasar el cursor */
+}
+@media (max-width: 768px) {
+    .styled-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .styled-form button, .styled-form textarea {
+        grid-column: span 2;
+    }
+}
+@media (max-width: 480px) {
+    .styled-form {
+        grid-template-columns: 1fr;
+    }
+    .styled-form button, .styled-form textarea {
+        grid-column: span 1;
+    }
+}
+/*pagina*/
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 95%;
+    table-layout: auto;
+    word-wrap: break-word;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    border: 1px solid #112872; /* Azul más oscuro para los bordes de la tabla */
+    text-align: center;
+    padding: 1px;
+    font-size: 13px;
+}
+th {
+    padding: 4px;
+    color: white;
+    background-color: #112872; /* Azul más oscuro para el encabezado de la tabla */
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+/*botones*/
+.buscar_eliminar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+/* Botones de exportar */
+.export-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.btn-archivop, .btn-archivoe {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-archivop {
+    background-color: #a71847;/* Rojo guinda oscuro para el botón de archivo */
+}
+.btn-archivop:hover {
+    background-color: rgb(107, 0, 41); /* Rojo guinda más oscuro al pasar el cursor */
+}
+.btn-archivoe {
+    background-color: #053c8f;
+}
+.btn-archivoe:hover {
+    background-color: #112872;
+}
+/* Contenedor de la papelera */
+.papelera-container {
+    flex-shrink: 0;
+    min-width: 150px;
+}
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b32828; /* Rojo guinda oscuro para el botón secundario */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: #8c0000; /* Rojo guinda más oscuro al pasar el cursor */
+}
+.search-container {
+    position: relative;
+    width: 40%;
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#buscar {
+    flex: 1;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+#buscar:focus {
+    outline: none;
+    border-color: #053c8f; /* Azul oscuro al enfocar */
+}
+#clearSearch {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 15px;
+    color: #999;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+#clearSearch:hover {
+    color: #053c8f; /* Azul oscuro al pasar el cursor */
+}
+/*editar*/
+.btn-edit {
+    background-color: #053c8f; /* Azul oscuro para el botón de editar */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-edit:hover {
+    background-color: #151e70; /* Azul más oscuro al pasar el cursor */
+}
+
+.btn-delete {
+    text-decoration: none;
+    background-color: #b32828; /* Rojo guinda oscuro para el botón de eliminar */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background-color: #8c0000; /* Rojo guinda más oscuro al pasar el cursor */
+}
+/* estilos del modal*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.modal-content input, 
+.modal-content select, 
+.modal-content textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+.modal-content select:focus,
+.modal-content input:focus{
+    outline: none;
+    border-color: #053c8f; /* Azul oscuro al enfocar */
+}
+.modal-content .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+.modal-content button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.modal-content button[name="actualizar"] {
+    background-color: #053c8f; /* Azul oscuro para el botón de actualizar */
+    color: #fff;
+}
+.modal-content button[name="actualizar"]:hover {
+    background-color: #082175; /* Azul más oscuro al pasar el cursor */
+}
+.modal-content button[type="button"] {
+    background-color: #b32828; /* Rojo guinda oscuro para el botón de cerrar */
+    color: #fff;
+}
+.modal-content button[type="button"]:hover {
+    background-color: #8c0000; /* Rojo guinda más oscuro al pasar el cursor */
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #b32828; /* Rojo guinda oscuro para el botón de cerrar del modal */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+.modal-close:hover {
+    color: #8c0000; /* Rojo guinda más oscuro al pasar el cursor */
+    transform: scale(1.2);
+}
+.button-group button{
+    margin: 15px;
+    color: white;
+    background-color: #112872; /* Azul más oscuro para los botones de grupo */
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.button-group button:hover{
+    background-color: #053c8f; /* Azul oscuro al pasar el cursor */
+}
+/*acciones*/
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+}
+.formulario input:focus,
+.formulario select:focus {
+    outline: none;
+    border-color: #053c8f; /* Azul oscuro al enfocar */
+}
+.btn-crear {
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 20px;
+    background-color: #053c8f; /* Azul oscuro para el botón de crear */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.btn-crear:hover {
+    background-color: #112872; /* Azul más oscuro al pasar el cursor */
+}
+.fila-formulario {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+.columna-formulario {
+    flex: 1;
+}
+.boton-crear {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #053c8f; /* Azul oscuro para el botón de crear */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.boton-crear:hover {
+    background-color: #112872; /* Azul más oscuro al pasar el cursor */
+}
+/*pagina papelera*/
+.icon-buttons {
+    margin-right: 50px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+.icon-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: #b32828; /* Rojo guinda oscuro para el botón de papelera */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+.icon-buttons a i {
+    margin-right: 5px;
+    font-size: 18px;
+}
+.icon-buttons a:hover {
+    background-color: #8c0000; /* Rojo guinda más oscuro al pasar el cursor */
+}
+.icon-buttons .volver {
+    background-color: #053c8f; /* Azul oscuro para el botón de volver */
+}
+.icon-buttons .volver:hover {
+    background-color: #112872; /* Azul más oscuro al pasar el cursor */
+}
+/*pagina manual*/
+.textomanu{
+    text-align: center;
+}
+.manualadmin {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+.manualadmin p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.paso img.imagen-paso {
+    max-width: 80%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 31, 90, 0.1); /* Sombra azul oscuro */
+}
+.paso p.texto-paso {
+    font-size: 1rem;
+    margin: 0;
+}
+.link {
+    color: #053c8f; /* Azul oscuro para los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+.link:hover {
+    text-decoration: underline;
+}

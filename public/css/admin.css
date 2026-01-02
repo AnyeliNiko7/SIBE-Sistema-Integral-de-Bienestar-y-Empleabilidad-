@@ -1,0 +1,565 @@
+/*pagina administrador*/
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 95%;
+    table-layout: auto;
+    word-wrap: break-word;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    border: 1px solid #112872;
+    text-align: center;
+    font-size: 13px;
+    padding: 1px;
+}
+
+th {
+    padding: 4px;
+    color: white;
+    background-color: #112872;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estados de usuario */
+.estado-activo { 
+    color: #28a745; 
+    font-weight: bold; 
+}
+.estado-inactivo { 
+    color: #4a00aa; 
+    font-weight: bold; 
+}
+.bloqueado-si { 
+    color: #cc4100; 
+    font-weight: bold; 
+}
+.bloqueado-no { 
+    color: #6c757d; 
+}
+.fecha-conexion { 
+    font-size: 0.85em; 
+    color: #666; 
+}
+.intentos-fallidos {
+    font-size: 0.8em;
+    color: #8a009c;
+}
+.tiempo-bloqueo {
+    font-size: 0.8em;
+    color: #ff000d;
+}
+
+/*botones*/
+.buscar_eliminar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn-edit {
+    background-color: #0044aa;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 2px;
+}
+
+.btn-edit:hover {
+    background-color: #001b75;
+}
+
+.btn-delete {
+    text-decoration: none;
+    font-size: 12px;
+    background-color: #9b0000;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.btn-delete:hover {
+    background-color: #770000;
+}
+
+.btn-status {
+    background-color: #ffbf00;
+    color: #212529;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 2px;
+}
+
+.btn-status:hover {
+    background-color: #b87d00;
+}
+
+.btn-unlock {
+    background-color: #007523;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 2px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-unlock:hover {
+    background-color: #004e0d;
+}
+
+.btn-update {
+    background-color: #02628f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-update:hover {
+    background-color: #002b5c;
+}
+
+/* Alertas */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Modal estilos*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.modal-content .button-group,
+.modal-content .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.modal-content button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #053c8f;
+    color: #fff;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #112872;
+}
+
+.modal-content button[type="button"] {
+    background-color: #b32828;
+    color: #fff;
+}
+
+.modal-content button[type="button"]:hover {
+    background-color: #8c0000;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #b32828;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.modal-close:hover {
+    color: #8c0000;
+    transform: scale(1.2);
+}
+
+.form-crear-usuario {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    color: #00027a;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    background: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #053c8f;
+}
+
+.form-submit {
+    background-color: #053c8f;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #112872;
+}
+
+.button-group {
+    width: 20%;
+    background-color: #112872;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-group:hover {
+    background-color: #053c8f;
+    transform: scale(1.05);
+}
+
+.button-group:active {
+    transform: scale(0.95);
+}
+
+.textomanu {
+    text-align: center;
+}
+
+.manualadmin {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
+.manualadmin p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.paso img.imagen-paso {
+    max-width: 80%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px rgba(13, 71, 161, 0.1);
+}
+
+.paso p.texto-paso {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.link {
+    color: #053c8f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 23px;
+    cursor: pointer;
+    color: #112872;
+    display: none;
+}
+
+.input-container input:not(:placeholder-shown)+i,
+.input-container input:focus+i {
+    display: block;
+}
+
+.input-container i:hover {
+    color: #053c8f;
+}
+
+#togglePasswordModal {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* Indicadores de validación de contraseña */
+.password-requirements {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #666;
+}
+.requirement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+.requirement.valid {
+    color: #28a745;
+}
+.requirement.invalid {
+    color: #dc3545;
+}
+.requirement-icon {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Botones con iconos */
+.btn-icon {
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 2px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-edit-user {
+    color: #ffffff;
+    background-color: rgb(0, 133, 153);
+}
+.btn-edit-user:hover {
+    background-color: #00576d;
+    color: white;
+}
+
+.btn-status-active {
+    color: #ffffff;
+    background-color: rgb(124, 0, 182);
+}
+.btn-status-active:hover {
+        background-color: #600069;
+
+    color: white;
+}
+
+.btn-status-inactive {
+    color: #ffffff;
+        background-color: rgb(231, 54, 0);
+
+}
+.btn-status-inactive:hover {
+    background-color: #a33400;
+    color: white;
+}
+
+.btn-disabled {
+    color: #6c757d;
+    background-color: rgba(108, 117, 125, 0.1);
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+
+.btn-update:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Form groups para modales */
+.form-group-modal {
+    margin-bottom: 15px;
+}
+.form-group-modal label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.form-group-modal input,
+.form-group-modal select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Tooltips para los botones */
+.btn-icon[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.actions-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form-submit:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+.form-submit:disabled:hover {
+    background-color: #4a545c;
+    transform: none;
+}

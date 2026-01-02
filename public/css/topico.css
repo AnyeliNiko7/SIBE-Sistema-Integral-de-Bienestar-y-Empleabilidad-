@@ -1,0 +1,714 @@
+/*acciones*/
+.registro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: 100%;
+}
+
+.registro .full-width {
+    grid-column: span 2;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #053c8f;
+}
+
+.styled-form input,
+.styled-form textarea,
+.styled-form select {
+    border: 1px solid #001f5a;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.styled-form input:focus,
+.styled-form textarea:focus,
+.styled-form select:focus {
+    outline: none;
+    border-color: #053c8f;
+}
+
+.form-container {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+}
+
+.styled-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+.boton_auto {
+    margin-top: 20px;
+}
+
+.styled-form input,
+.styled-form select,
+.styled-form textarea,
+.styled-form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.styled-form button {
+    margin-top: 20px;
+    background-color: #053c8f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.styled-form button:hover {
+    background-color: #112872;
+}
+
+/*pagina inicio*/
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 95%;
+    table-layout: fixed;
+    word-wrap: break-word;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    table-layout: auto;
+}
+
+th,
+td {
+    font-size: 13px;
+    border: 1px solid #112872;
+    text-align: center;
+    padding: 3px;
+}
+
+th {
+    padding: 5px;
+    color: white;
+    background-color: #112872;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background: linear-gradient(90deg, #c7d1eb, #c5c1c1);
+}
+
+table td a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/*barra de búsqueda */
+.search-container {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+#buscarDNI {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#buscarDNI:hover {
+    border-color: #053c8f;
+}
+
+#buscarDNI:focus {
+    outline: none;
+    border-color: #053c8f;
+}
+
+/* Botón de limpiar ("X") */
+#clearSearch {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #868686;
+    cursor: pointer;
+    display: none;
+    background: transparent;
+    border: none;
+}
+
+#clearSearch:hover {
+    color: #053c8f;
+}
+
+/*botones*/
+.buscar_eliminar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn-secondary {
+    margin-right: 50px;
+    align-items: center;
+    background-color: #b32828;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #8c0000;
+}
+
+.btn-details {
+    background-color: #053c8f;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-details:hover {
+    background-color: #112872;
+}
+
+.btn-edit {
+    background-color: #05638f;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-edit:hover {
+    background-color: #114486;
+}
+
+.btn-delete {
+    text-decoration: none;
+    background-color: #b32828;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background-color: #8c0000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #053c8f;
+}
+
+.modal-content .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.modal-content button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-content button[name="actualizar"] {
+    background-color: #053c8f;
+    color: #fff;
+}
+
+.modal-content button[name="actualizar"]:hover {
+    background-color: #082175;
+}
+
+.modal-content button[type="button"] {
+    background-color: #b32828;
+    color: #fff;
+}
+
+.modal-content button[type="button"]:hover {
+    background-color: #8c0000;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #b32828;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.modal-close:hover {
+    color: #8c0000;
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para el filtro de fechas */
+.filter-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-container label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+#filtroFecha {
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*pagina papelera*/
+.icon-buttons {
+    margin-right: 50px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.icon-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: #b32828;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.icon-buttons a i {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.icon-buttons a:hover {
+    background-color: #8c0000;
+}
+
+.icon-buttons .volver {
+    background-color: #053c8f;
+}
+
+.icon-buttons .volver:hover {
+    background-color: #112872;
+}
+
+/*pagina medicamentos*/
+.btn-cantidad {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #053c8f;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cantidad:hover {
+    background-color: #112872;
+    transform: scale(1.1);
+}
+
+.btn-cantidad:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cantidad-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidad-numero {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.campo-busqueda {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#buscador {
+    margin: 25px;
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#buscador:focus {
+    outline: none;
+    border-color: #053c8f;
+}
+
+.clear-busqueda {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 15px;
+    color: #999;
+    user-select: none;
+}
+
+.clear-busqueda:hover {
+    color: #053c8f;
+}
+
+.contenedor-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.guardar_me {
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 20px;
+    background-color: #053c8f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.guardar_me:hover {
+    background-color: #112872;
+}
+
+.guardar_me:active {
+    background-color: #001f5a;
+    transform: scale(0.95);
+}
+
+.campo label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #001f5a;
+}
+
+.campo input {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #053c8f;
+}
+
+/*pagina información*/
+.form-filtro {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.label-agrupacion {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.select-agrupacion {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.btn-filtrar {
+    background-color: #053c8f;
+    color: white;
+    padding: 7px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.btn-filtrar:hover {
+    background-color: #112872;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.button-group button {
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#btnDescargarPDF {
+    background-color: #a71847;
+}
+
+#btnDescargarExcel {
+    background-color: #053c8f;
+}
+
+#btnDescargarPDF:hover {
+    background-color: rgb(107, 0, 41);
+}
+
+#btnDescargarExcel:hover {
+    background-color: #112872;
+}
+
+.tabla-container {
+    padding: 10px;
+}
+
+.tabla-registros th,
+.tabla-registros td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000cb3;
+}
+
+.tabla-registros .tabla-header {
+    background-color: #112872;
+    color: white;
+    font-weight: bold;
+}
+
+.tabla-registros .fecha-agrupacion {
+    background-color: #880022;
+    text-align: left;
+    padding-left: 15px;
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+}
+
+/* Estilo general para los detalles */
+#detalles-content {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #001f5a;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+#detalles-content .detalle {
+    margin-bottom: 10px;
+}
+
+/*pagina manual*/
+.textomanu {
+    text-align: center;
+}
+
+.manualadmin {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
+.manualadmin p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.paso img.imagen-paso {
+    max-width: 80%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px rgba(4, 31, 121, 0.1);
+}
+
+.paso p.texto-paso {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.link {
+    color: #053c8f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

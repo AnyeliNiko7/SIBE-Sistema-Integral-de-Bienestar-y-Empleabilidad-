@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+main {
+    display: flex;
+    width: auto;
+    max-width: 1200px;
+    height: auto; /* <--- Cambia esto */
+    border-radius: 20px;
+   box-shadow: 
+    0 7px 15px rgba(0, 0, 0, 0.25),   /* sombra más profunda inferior */
+    0 3px 5px rgba(0, 0, 0, 0.15),   /* sombra intermedia para realismo */
+    inset 0 2px 5px rgba(255, 255, 255, 0.8); /* brillo interno más fuerte */
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+main section {
+    width: 50%; /* <-- Hace que cada sección ocupe la mitad del contenedor principal */
+}
+section:nth-child(1) {
+    background-color: #fff;
+    padding: 40px;
+    flex: 1; /* Le da a esta sección un peso igual en el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.header-container h2 {
+    font-size: 2.5rem;
+    color: #0e106b;
+    margin-bottom: 20px;
+}
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color:  #86051a;
+    font-size: 27px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+/* Estilo de los iconos */
+.input-container i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 23px; /* Tamaño del ícono */
+    color:  #043692;  /* Color azul */
+}
+
+/* Estilo de los campos de entrada */
+.input-container select {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.input-container input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.input-container label {
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    font-size: 16px;
+    color: #3a3a3a;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 40px;
+    font-size: 12px;
+    color:  #03009e;
+}
+.cb_area input,
+.cb_area select {
+    color:  #10009e;
+    width: 100%;
+    border: 0.8px solid;
+    border-radius: 10px;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box rgb(114, 135, 255);
+    font-size: 16px;
+    background: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.input-container input:focus,
+.input-container select:focus {
+    border-bottom: 2px solid #1954d2;
+}
+.login-container input[type="submit"] {
+    background: linear-gradient(45deg, #023f74, #941313);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 0;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background 0.4s ease;
+    display: inline-block;
+}
+
+.login-container input[type="submit"]:hover {
+    background: linear-gradient(45deg, #941313,#023f74);
+}
+.login-container a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.login-container a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.login-container a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+}
+
+.login-container a:hover::after {
+    width: 100%;
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.logo-animation {
+    width: 170px;
+    height: auto;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+#togglePassword {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 23px;
+    color:  #00189e;
+    display: none;
+}
+.input-container input:not(:placeholder-shown) + #togglePassword {
+    display: block;
+}
+#togglePassword.bx-show {
+    display: block;
+}
+
+#togglePassword.bx-hide {
+    display: block;
+}
+.input-container label {
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    font-size: 16px;
+    color: #3a3a3a;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 40px;
+    font-size: 12px;
+    color: #00109e;
+}
+section:nth-child(2) {
+    position: relative; /* Esencial para que el pseudo-elemento se posicione correctamente */
+    background: url("../img/fondo_instucional.jpg") no-repeat center center/cover;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 1; /* Asegura que la sección esté por encima del pseudo-elemento */
+    overflow: hidden; /* Importante para contener los copos de nieve */
+}
+
+/* Pseudo-elemento para el filtro borroso y azulado */
+section:nth-child(2)::before {
+    content: ''; /* Propiedad obligatoria para los pseudo-elementos */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 39, 124, 0.322); /* Color azul con transparencia (0.4) */
+    backdrop-filter: blur(1px); /* Aplica el efecto de desenfoque */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido de la sección */
+}
+
+/* Elemento para la animación de nieve */
+section:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 160px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 10px 190px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 60px 10px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 120px 40px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 180px 100px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 30px 150px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 80px 180px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 150px 50px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 100px 15px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 180px 170px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 25px 100px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 70px 130px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 140px 25px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 5px 85px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 190px 140px, #ddd, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    z-index: 0;
+    animation: snowfall 6s linear infinite; /* Cambiado de 15s a 6s para que caiga más rápido */
+    pointer-events: none;
+}
+/* Animación de la nieve cayendo */
+@keyframes snowfall {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 200px;
+    }
+}
+.image_fondo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255); /* Color de texto blanco para que se vea bien */
+    text-align: center;
+}
+
+.bienbenida {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    z-index: 2; /* Opcional: asegura que el título esté por encima de todo */
+}
+
+.description {
+    font-size: 12px;
+    color: #ffffff; /* Asegúrate de que este texto también sea blanco */
+}
+
+.logo_instituto {
+    position: relative;
+    margin-top: 10px;
+    width: 120px; /* Define el tamaño del círculo */
+    height: 120px; /* Asegura que sea un círculo perfecto */
+    background-color: #ffffff; /* El color blanco del círculo */
+    border-radius: 50%; /* Esto es clave para convertir el div en un círculo */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto 3D */
+    z-index: 2; /* Asegura que el logo esté sobre la nieve */
+}
+
+/*
+ * Estilos de la imagen del logo dentro del círculo
+ */
+.logo_imagen {
+    max-width: 80%; /* El logo no ocupará el 100% del círculo */
+    height: auto;
+}
+#error-message {
+    color: #ff0000;
+    margin-top: 10px;
+    text-align: center;
+}
